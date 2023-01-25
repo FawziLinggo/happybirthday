@@ -1,19 +1,25 @@
 // trigger to play music in the background with sweetalert
 window.addEventListener('load', () => {
   Swal.fire({
-    title: 'Do you want to play music in the background?',
+
+    title: 'Ingin memutar musiknya kekasihku?',
     // text: "You won't be able to revert this!",
-    icon: 'warning',
+    // icon: 'warning',
+    iconHtml: '<img src="https://media.tenor.com/ADqG6c7X9sUAAAAC/milk-and-mocha-bears-hearts.gif" width="100" height="100">',
+    customClass: {
+      icon: 'no-border'
+    },
     showCancelButton: true,
     confirmButtonColor: '#3085d6',
     cancelButtonColor: '#d33',
-    confirmButtonText: 'Yes',
-    cancelButtonText: 'No',
+    confirmButtonText: 'Iya',
+    cancelButtonText: 'Tentu saja',
   }).then((result) => {
     if (result.isConfirmed) {
       document.querySelector('.song').play();
       resolveFetch().then(animationTimeline());
     } else {
+      document.querySelector('.song').play();
       resolveFetch().then(animationTimeline());
     }
   });
